@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Maniacs Co.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .fade-in {
+            opacity: 0;
+            transform: translateY(20px); /* Slide up effect */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .visible {
+        opacity: 1;
+        transform: translateY(0); /* Reset the position */
+    }
+</style>
+<body>
+    <div class="bg-white h-screen w-full">
+        <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
+        <script>
+            const lenis = new Lenis()
+
+            lenis.on('scroll', (e) => {
+            console.log(e)
+            })
+
+            function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+            }
+
+            requestAnimationFrame(raf)
+        </script>
+                <!-- Navbar -->
+                <nav class="bg-zinc-900 text-white lg:py-1 lg:px-4 lg:flex lg:items-center lg:justify-center">
+                    <!-- Hamburger Menu Button -->
+                    <div class="flex justify-between items-center lg:hidden px-4 py-4">
+                        <div>
+                            <img src="/images/Logo1.png" class="w-32">
+                        </div>
+                        <button id="menu-btn" class="text-white focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+            
+                    <!-- Navigation Menu -->
+                    <div id="menu" class="hidden lg:flex lg:items-center lg:justify-center lg:flex-row lg:space-x-8 lg:py-8 sm:px-4 sm:py-8">
+                        <!-- Left Links -->
+                        <ul class="lg:flex lg:items-center lg:space-x-6 lg:flex-row">
+                            <li><a href="/index.html" class="hover:text-gray-300 transition duration-300 font-semibold">Home</a></li>
+                            <li><a href="/aboutPage.html" class="hover:text-gray-300 transition duration-300 font-semibold">About</a></li>
+                            <li><a href="/menuPage.html" class="hover:text-gray-300 transition duration-300 font-semibold">Menu</a></li>
+                        </ul>
+            
+                        <!-- Center Logo -->
+                        <div class="lg:relative lg:inline-block">
+                            <img src="/images/Logo1.png" class="w-72 mx-8 -mb-24 hidden lg:block">
+                        </div>
+            
+                        <!-- Right Links -->
+                        <ul class="lg:flex lg:items-center lg:space-x-6 lg:flex-row">
+                            <li><a href="/franchisePage.html" class="hover:text-gray-300 transition duration-300 font-semibold">Franchise</a></li>
+                            <li><a href="/contactPage.html" class="hover:text-gray-300 transition duration-300 font-semibold">Contact</a></li>
+                            <li><a href="/galleryPage.html" class="hover:text-gray-300 transition duration-300 font-semibold">Gallery</a></li>
+                        </ul>
+                    </div>
+            
+                    <!-- Mobile Menu -->
+                    <div id="mobile-menu" class="lg:hidden hidden px-4 py-2 space-y-4">
+                        <a href="/index.html" class="block hover:text-gray-300 transition duration-300 font-semibold">Home</a>
+                        <a href="/aboutPage.html" class="block hover:text-gray-300 transition duration-300 font-semibold">About</a>
+                        <a href="/menuPage.html" class="block hover:text-gray-300 transition duration-300 font-semibold">Menu</a>
+                        <a href="/franchisePage.html" class="block hover:text-gray-300 transition duration-300 font-semibold">Franchise</a>
+                        <a href="/contactPage.html" class="block hover:text-gray-300 transition duration-300 font-semibold">Contact</a>
+                        <a href="/galleryPage.html" class="block hover:text-gray-300 transition duration-300 font-semibold">Gallery</a>
+                    </div>
+                </nav>
+            
+                <script>
+                    const menuBtn = document.getElementById('menu-btn');
+                    const menu = document.getElementById('menu');
+                    const mobileMenu = document.getElementById('mobile-menu');
+            
+                    menuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                </script>
+
+        <div class="flex justify-center pb-4" style="margin-top: 100px;">
+            <div class="grid grid-cols-1 sm:grid-cols-1 gap-10 gap-20 justify-center items-center">
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery1.png" class="fade-in">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery2.png" class="fade-in">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery3.png" class="fade-in">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery4.png" class="fade-in ">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery5.png" class="fade-in ">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery6.png" class="fade-in ">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery7.png" class="fade-in ">
+                </div>
+                <div class="flex justify-center" style="width: 100%; max-width: 300px;">
+                    <img src="/images/Gallery8.png" class="fade-in ">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const images = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        </script>
+        
+        <footer class="p-4 bg-black text-white">
+            <!-- Main Container for Location and Contact Information -->
+            <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col space-y-8 lg:space-y-0 lg:items-start lg:justify-between lg:flex-row">
+                
+                <!-- Location and Contact Group 1 -->
+                <div class="flex flex-col sm:flex-row sm:justify-between lg:items-start lg:flex-col lg:space-y-4">
+                    <!-- Location 1 -->
+                    <div class="flex items-start space-x-4 mb-4 sm:mb-0">
+                        <img src="/images/location.jpg" class="h-10 w-10" alt="Location Image">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                            Shop 4, Aabad Arcade, Opp. Al Burooj, Sarkhej Makarba Road, Makarba - 380055
+                        </span>
+                    </div>
+                    <!-- Contact 1 (Below Location on Large Screens) -->
+                    <div class="flex items-center space-x-4 lg:ml-14">
+                        <img src="/images/contact.png" class="h-6 w-5 lg:mt-6 lg:-ml-7">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl lg:mt-6">
+                            +91 7567759924
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Location and Contact Group 2 -->
+                <div class="flex flex-col sm:flex-row sm:justify-between lg:items-start lg:flex-col lg:space-y-4">
+                    <!-- Location 2 -->
+                    <div class="flex items-start space-x-4 mb-4 sm:mb-0">
+                        <img src="/images/location.jpg" class="h-10 w-10" alt="Location Image">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                            Shop 2, Sacred Steps, Opp. Cama Hotel, Khanpur, Ahmedabad - 380001
+                        </span>
+                    </div>
+                    <!-- Contact 2 (Below Location on Large Screens) -->
+                    <div class="flex items-center space-x-4 lg:ml-14">
+                        <img src="/images/contact.png" class="h-6 w-5 lg:mt-6 lg:-ml-7">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl lg:mt-6">
+                            +91 8200373025
+                        </span>
+                    </div>
+                </div>
+        
+                <!-- Location and Contact Group 3 -->
+                <div class="flex flex-col sm:flex-row sm:justify-between lg:items-start lg:flex-col lg:space-y-4">
+                    <!-- Location 3 -->
+                    <div class="flex items-start space-x-4 mb-4 sm:mb-0">
+                        <img src="/images/location.jpg" class="h-10 w-10" alt="Location Image">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                            Shop 3-4, May Rose Apartment, Nr. Ellis Bridge Post Office, Kocharab Paldi, Ahmedabad - 380006
+                        </span>
+                    </div>
+                    <!-- Contact 3 (Below Location on Large Screens) -->
+                    <div class="flex items-center space-x-4 lg:ml-14">
+                        <img src="/images/contact.png" class="h-6 w-5 lg:mt-6 lg:-ml-7">
+                        <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl lg:mt-6">
+                            +91 9824589924
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- New Centered Contact Section -->
+            <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col space-y-4 items-center border-t border-gray-700 mt-8 pt-4">
+                <h1 class="text-xl mb-3">FOR FRANCHISE INQUIRIES :</h1>
+                <div class="flex items-center space-x-4">
+                    <img src="/images/contact.png" class="h-6 w-5">
+                    <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                        +91 9727265387
+                    </span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="/images/email.jpg" class="h-10 w-10">
+                    <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                        connect@thefoodmaniacsco.com
+                    </span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="/images/instagram.png" class="h-10 w-10">
+                    <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                        <a href="https://www.instagram.com/thefoodmaniacsco/" target="_blank">@thefoodmaniacsco</a>
+                    </span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="/images/facebook.png" class="h-10 w-10">
+                    <span class="text-sm text-gray-500 dark:text-white text-base sm:text-lg md:text-xl">
+                        <a href="https://www.facebook.com/thefoodmaniacsco" target="_blank">@thefoodmaniacsco</a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
